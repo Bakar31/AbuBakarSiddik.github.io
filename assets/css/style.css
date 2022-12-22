@@ -56,7 +56,7 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   z-index: 997;
   overflow-y: auto;
-  background: url("../img/bg.jpg") top right no-repeat;
+  background: top right no-repeat;
   background-size: cover;
   position: relative;
 }
