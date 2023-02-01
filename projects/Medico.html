@@ -2,7 +2,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
   
-    <title>Mechatronics QA System</title>
+    <title>Medico</title>
     <meta content="" name="descriptison">
     <meta content="" name="keywords">
   
@@ -43,40 +43,24 @@
   
             <div class="col-lg-12 portfolio-info">
               <br>
-              <h2 style="color:#12d640">Mechatronics QA System</h2>
+              <h2 style="color:#12d640">Medico</h2>
               <ul>
-                <li><strong>Tech Stack</strong>: Python, Transformer, Haystack, roberta-base-squad2</li>
-                <li><strong>APP URL</strong>: <a href="https://huggingface.co/spaces/Bakar31/MTE_QA" target="_blank">Web App</a></li>
-                <li><strong>Github URL</strong>: <a href="https://github.com/Bakar31/MTE-QA" target="_blank">GitHub repo</a></li>
+                <li><strong>Tech Stack</strong>: Python, Rasa</li>
+                <li><strong>Github URL</strong>: <a href="https://github.com/Bakar31/Medico" target="_blank">GitHub repo</a></li>
+                <li><strong>Telegram</strong>: @medico31_bot</li>
               </ul>
-                <p><b>Motivation:</b>
-                  Whenever I tell someone I study Mechatronics Engineering, almost always they ask, "What is that?" Most people have never heard of it. 
-                  So, it's a common problem. So, I have created a question-answering system that will answer your Mechatronics related queries. 
-                  Of course, it has limitations. You can look at the example questions I provided on GitHub. </p>
-
-                <b>My Approch:</b> 
-                <p>
-                  I scraped raw data from  Google and created a dataset. The dataset is not very reach, but as it is a specific problem, 
-                  it works relatively well. Haystack has been used to train the modeling, 
-                  and for the frontend I utilized gradio. The system returns two possible answers with its confidence score.
+                <p><h2>Description:</h2>
+                  An Interactive Chatbot that can diagnose simple headaches and fever through Q&A sessions. 
                 
-                  Traning Setting:
-                  <li>Model: roberta-base-squad2</li>
-                  <li>max_seq_len = 512</li>
-                  <li>context_window_size = 150</li>
-                  <li>doc_stride = 128</li>
-                  <li>batch_size = 32</li>
-                  <br>
+                <h3>Features:</h3>
+                <li>Can diagnose different types of headaches from symptoms.</li>
+                <li>Can diagnose fever.</li>
+                </p>
 
-                  Multiple models' results were compared. The most effective solution comes from Deepset roberta-base-squad2.</p>
 
                   <p>
                   Sample output: <br>
-                  <img src="\assets\img\project\MTE_QA\sample-2.jpg" class="img-fluid">
-
-                  <br>
-                  <br>
-                  <img src="\assets\img\project\MTE_QA\sample-1.jpg" class="img-fluid"></p>
+                  <img src="\assets\img\project\Medico\sample chat history.jpg" class="img-fluid">
     
                 
                 </div>
