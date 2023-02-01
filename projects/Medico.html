@@ -2,7 +2,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
   
-    <title>Blood Clot Origins Classification in Ischemic Stroke</title>
+    <title>Mechatronics QA System</title>
     <meta content="" name="descriptison">
     <meta content="" name="keywords">
   
@@ -43,60 +43,42 @@
   
             <div class="col-lg-12 portfolio-info">
               <br>
-              <h2 style="color:#12d640">Blood Clot Origins Classification in Ischemic Stroke</h2>
+              <h2 style="color:#12d640">Mechatronics QA System</h2>
               <ul>
-                <li><strong>Tech Stack</strong>: Python, Deep Learning, Transfer Learning, CNN, EfficentNet, Tensorflow</li>
-                <li><strong>Github URL</strong>: <a href="https://github.com/Bakar31/Image-Classification-of-Stroke-Blood-Clot-Origin" target="_blank">Project Link</a></li>
+                <li><strong>Tech Stack</strong>: Python, Transformer, Haystack, roberta-base-squad2</li>
+                <li><strong>APP URL</strong>: <a href="https://huggingface.co/spaces/Bakar31/MTE_QA" target="_blank">Web App</a></li>
+                <li><strong>Github URL</strong>: <a href="https://github.com/Bakar31/MTE-QA" target="_blank">GitHub repo</a></li>
               </ul>
-
-              <p><b>Motivation:</b>
-                Stroke remains the second-leading cause of death worldwide. Each year in the United States, 
-                over 700,000 individuals experience an ischemic stroke caused by a blood clot blocking an artery to the brain.
-                During the last decade, mechanical thrombectomy has become the standard of care treatment for acute ischemic stroke from large vessel occlusion. 
-                As a result, retrieved clots became amenable to analysis. Healthcare professionals are currently attempting to apply deep learning-based methods to 
-                predict ischemic stroke etiology and clot origin.</p>
-
-              <p><b>Goal:</b>
-                This project aims to classify the blood clot origins in ischemic stroke using whole-slide digital pathology images. 
-                The model should be able to differentiate between the two major acute ischemic strokes (AIS) etiology subtypes: cardiac and large artery atherosclerosis.</p>
-
-                <p><b>Challenges:</b>
-                <li>Unique data formats</li>
-                <li>Image file sizes</li>
-                <li>number of available pathology slides</li>
-                </p>
+                <p><b>Motivation:</b>
+                  Whenever I tell someone I study Mechatronics Engineering, almost always they ask, "What is that?" Most people have never heard of it. 
+                  So, it's a common problem. So, I have created a question-answering system that will answer your Mechatronics related queries. 
+                  Of course, it has limitations. You can look at the example questions I provided on GitHub. </p>
 
                 <b>My Approch:</b> 
                 <p>
-                <li>Open slide + CNN: Read data using open slide and train the model on them.</li>
-                <li>Convert large .tif files to PNG + CNN: Digital pathology images are huge and need a huge amount of memory. 
-                  So I converted them first into PNG format and then applied CNN.</li>
-                <li>EfficientNet: I utilized EfficentNetB5 for final model traning.</li>
-                <li>Ensemble</li>
-
-                <br>
-                <b>Best approache:</b>
-                First, I converted the high-quality tif files into PNG format to reduce memory consumption, 
-                then used EfficentNetB5 architecture to train the model with the converted images.</p>
-
-                <p>
-                  Sample image-1:
-                  <br>
-                  <img src="\assets\img\project\blood clot\sample-1.png" class="img-fluid">
-
+                  I scraped raw data from  Google and created a dataset. The dataset is not very reach, but as it is a specific problem, 
+                  it works relatively well. Haystack has been used to train the modeling, 
+                  and for the frontend I utilized gradio. The system returns two possible answers with its confidence score.
+                
+                  Traning Setting:
+                  <li>Model: roberta-base-squad2</li>
+                  <li>max_seq_len = 512</li>
+                  <li>context_window_size = 150</li>
+                  <li>doc_stride = 128</li>
+                  <li>batch_size = 32</li>
                   <br>
 
-                  Sample image-2:
-                  <br>
-                  <img src="\assets\img\project\blood clot\sample-2.png" class="img-fluid">
-                  <br>
-                  <br>
-                  Pixel distribution for train images:
-                  <br>
-                  <img src="\assets\img\project\blood clot\pixel dist.png" class="img-fluid">
-                  </p>
-  
+                  Multiple models' results were compared. The most effective solution comes from Deepset roberta-base-squad2.</p>
 
+                  <p>
+                  Sample output: <br>
+                  <img src="\assets\img\project\MTE_QA\sample-2.jpg" class="img-fluid">
+
+                  <br>
+                  <br>
+                  <img src="\assets\img\project\MTE_QA\sample-1.jpg" class="img-fluid"></p>
+    
+                
                 </div>
 
             </div>
