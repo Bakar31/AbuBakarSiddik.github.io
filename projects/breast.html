@@ -2,7 +2,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
   
-    <title>Blood Clot Classification</title>
+    <title>Breast Cancer Detection</title>
     <meta content="" name="descriptison">
     <meta content="" name="keywords">
   
@@ -43,41 +43,75 @@
   
             <div class="col-lg-12 portfolio-info">
               <br>
-              <h2 style="color:#12d640">Blood Clot Origins Classification in Ischemic Stroke</h2>
+              <h2 style="color:#12d640">Breast Cancer Detection</h2>
               <ul>
-                <li><strong>Tech Stack</strong>: Python, Deep Learning, Transfer Learning, CNN, EfficentNet, Tensorflow</li>
-                <li><strong>Github URL</strong>: <a href="https://github.com/Bakar31/Image-Classification-of-Stroke-Blood-Clot-Origin" target="_blank">Project Link</a></li>
+                <li><strong>Tech Stack</strong>: Python, Deep Learning, Transfer Learning, CNN, Vision Transformer, Tensorflow</li>
+                <li><strong>Github URL</strong>: <a href="https://github.com/Bakar31/Breast-Cancer-Detection" target="_blank">Project Link</a></li>
               </ul>
 
               <p><b>Motivation:</b>
-                Stroke remains the second-leading cause of death worldwide. Each year in the United States, 
-                over 700,000 individuals experience an ischemic stroke caused by a blood clot blocking an artery to the brain.
-                During the last decade, mechanical thrombectomy has become the standard of care treatment for acute ischemic stroke from large vessel occlusion. 
-                As a result, retrieved clots became amenable to analysis. Healthcare professionals are currently attempting to apply deep learning-based methods to 
-                predict ischemic stroke etiology and clot origin.</p>
+                According to the WHO, breast cancer is the most commonly occurring cancer worldwide. 
+                In 2020 alone, there were 2.3 million new breast cancer diagnoses and 685,000 deaths. 
+                Yet breast cancer mortality in high-income countries has dropped by 40% since the 1980s 
+                when health authorities implemented regular mammography screening in age groups considered at risk. 
+                Early detection and treatment are critical to reducing cancer fatalities. In this project, 
+                I developed multiple cancer detection models from routine mammography scans and compared their performance.</p>
 
               <p><b>Goal:</b>
-                This project aims to classify the blood clot origins in ischemic stroke using whole-slide digital pathology images. 
-                The model should be able to differentiate between the two major acute ischemic strokes (AIS) etiology subtypes: cardiac and large artery atherosclerosis.</p>
-
-                <p><b>Challenges:</b>
-                <li>Unique data formats</li>
-                <li>Image file sizes</li>
-                <li>number of available pathology slides</li>
-                </p>
+                Breast cancer detection with screening mammograms obtained from regular screening.
+              </p>
 
                 <b>My Approch:</b> 
                 <p>
-                <li>Open slide + CNN: Read data using open slide and train the model on them.</li>
-                <li>Convert large .tif files to PNG + CNN: Digital pathology images are huge and need a huge amount of memory. 
-                  So I converted them first into PNG format and then applied CNN.</li>
-                <li>EfficientNet: I utilized EfficentNetB5 for final model traning.</li>
-                <li>Ensemble</li>
+                <li>The given DCM image files were converted to PNG. I tried converting the file in the data generator, but it took 
+                  extra time.
+                </li>
+                <li>Most of the regions in the image didn't contain useful information. So, I extracted the Region of
+                  Interest (ROI) and created a new dataset to work with.
+                </li>
+                <li>Transfer learning was used to evaluate the performance of various well-known architectures 
+                  (AlexNet, VGG-16, Resnet50, and EfficientNet). The performance of various vision transformers was then evaluated.</li>
+                <li>The performance of vision transformer was satisfactory and the results are given in the table below.</li>
 
                 <br>
-                <b>Best approache:</b>
-                First, I converted the high-quality tif files into PNG format to reduce memory consumption, 
-                then used EfficentNetB5 architecture to train the model with the converted images.</p>
+                
+                <h2>Results</h2>
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Algorithm</th>
+                          <th>Accuracy</th>
+                          <th>AUC</th>
+                          <th>Pf1</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>EfficientNetV1B0</td>
+                          <td>0.9767</td>
+                          <td>0.5920</td>
+                          <td>0.0417</td>
+                        </tr>
+                        <tr>
+                          <td>ConvNeXtTiny</td>
+                          <td>0.9793</td>
+                          <td>0.7009</td>
+                          <td>0.0647</td>
+                        </tr>
+                        <tr>
+                          <td>FlexiViTSmall</td>
+                          <td>0.9778</td>
+                          <td>0.5297</td>
+                          <td>0.0305</td>
+                        </tr>
+                        <tr>
+                          <td>DaViT_T</td>
+                          <td>0.9781</td>
+                          <td>0.6953</td>
+                          <td>0.0719</td>
+                        </tr>
+                      </tbody>
+                    </table>
 
                 <div style="text-align:center;">
                   <b>Sample slide images</b>
